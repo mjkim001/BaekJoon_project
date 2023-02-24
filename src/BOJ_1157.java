@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class BOJ_1157 {
     public static void main(String[] args) {
@@ -9,8 +11,8 @@ public class BOJ_1157 {
 
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        str = str.trim().toUpperCase();
-        String[] arr = str.split("");
+        //str = str.toUpperCase();
+        String[] arr = str.toUpperCase().split("");
 
         Map<String, Integer> strMap = new HashMap<>();
 
@@ -30,10 +32,10 @@ public class BOJ_1157 {
                 result = entrySet.getKey();
                 temp =  entrySet.getValue();
             } else if(temp == entrySet.getValue()) {
-                System.out.println("?");
-                return;
+                result = "?";
             }
         }
+
         System.out.println(result);
     }
 }
